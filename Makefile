@@ -6,7 +6,7 @@
 #    By: sflinois <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 09:38:34 by sflinois          #+#    #+#              #
-#    Updated: 2016/11/21 14:06:01 by sflinois         ###   ########.fr        #
+#    Updated: 2016/12/05 10:58:53 by sflinois         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRC = 	ft_atoi.c \
 		ft_strcpy.c \
 		ft_strdel.c \
 		ft_strdup.c \
+		ft_strndup.c \
 		ft_strequ.c \
 		ft_striter.c \
 		ft_striteri.c \
