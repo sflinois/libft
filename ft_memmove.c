@@ -6,7 +6,7 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 10:23:05 by sflinois          #+#    #+#             */
-/*   Updated: 2016/12/17 12:11:28 by sflinois         ###   ########.fr       */
+/*   Updated: 2016/12/17 13:24:39 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned int		i;
-	
+
 	i = 0;
 	if (dst > src)
 	{
