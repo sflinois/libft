@@ -6,7 +6,7 @@
 #    By: sflinois <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 09:38:34 by sflinois          #+#    #+#              #
-#    Updated: 2016/12/05 10:58:53 by sflinois         ###   ########.fr        #
+#    Updated: 2016/12/17 11:49:04 by sflinois         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ OBJ = 	$(SRC:.c=.o)
 
 INC = libft.h
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 all : $(NAME)
 
