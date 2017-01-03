@@ -6,11 +6,11 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 12:23:08 by sflinois          #+#    #+#             */
-/*   Updated: 2016/12/07 16:16:07 by sflinois         ###   ########.fr       */
+/*   Updated: 2016/12/21 11:30:48 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 #include <string.h>
 #include <stdlib.h>
 

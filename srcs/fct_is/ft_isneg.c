@@ -6,11 +6,11 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 15:14:10 by sflinois          #+#    #+#             */
-/*   Updated: 2016/11/14 15:15:59 by sflinois         ###   ########.fr       */
+/*   Updated: 2016/12/21 11:29:44 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 int		ft_isneg(int c)
 {
