@@ -6,7 +6,7 @@
 #    By: sflinois <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 09:38:34 by sflinois          #+#    #+#              #
-#    Updated: 2016/12/21 12:25:00 by sflinois         ###   ########.fr        #
+#    Updated: 2017/01/07 10:36:27 by sflinois         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC = 	$(D_BTREE)/ft_btree_create_node.c $(D_BTREE)/ft_btree_apply_prefix.c \
 	\
 	$(D_LIST)/ft_lstadd.c $(D_LIST)/ft_lstdel.c $(D_LIST)/ft_lstdelone.c \
 	$(D_LIST)/ft_lstiter.c $(D_LIST)/ft_lstmap.c $(D_LIST)/ft_lstnew.c \
+	$(D_LIST)/ft_lstdelone_cmp.c \
 	\
 	$(D_MEM)/ft_bzero.c $(D_MEM)/ft_memalloc.c $(D_MEM)/ft_memccpy.c \
 	$(D_MEM)/ft_memchr.c $(D_MEM)/ft_memcmp.c $(D_MEM)/ft_memcpy.c \
@@ -69,6 +70,7 @@ OBJ = 	ft_btree_create_node.o ft_btree_apply_prefix.o \
 	\
 	ft_lstadd.o ft_lstdel.o ft_lstdelone.o \
 	ft_lstiter.o ft_lstmap.o ft_lstnew.o \
+	ft_lstdelone_cmp.o \
 	\
 	ft_bzero.o ft_memalloc.o ft_memccpy.o \
 	ft_memchr.o ft_memcmp.o ft_memcpy.o \

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_cmp.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/10 12:57:43 by sflinois          #+#    #+#             */
-/*   Updated: 2017/01/07 10:35:43 by sflinois         ###   ########.fr       */
+/*   Created: 2017/01/07 09:56:48 by sflinois          #+#    #+#             */
+/*   Updated: 2017/01/07 10:35:40 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,27 @@
 #include <string.h>
 #include <stdlib.h>
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstdelone_cmp(t_list **lst, t_list **del)
 {
-	if (new)
+	t_list	*prev;
+	t_list	*tmp;
+
+	tmp = *lst;
+	if (tmp == *del)
 	{
-		new->next = *alst;
-		*alst = new;
+		*lst = tmp->next;
+		free(tmp->content);
+		free(tmp);
+		return ;
 	}
+	prev = *lst;
+	tmp = (*lst)->next;
+	while (tmp != *del)
+	{
+		prev = tmp;
+		tmp = tmp->next;
+	}
+	prev->next = tmp->next;
+	free(tmp->content);
+	free(tmp);
 }
