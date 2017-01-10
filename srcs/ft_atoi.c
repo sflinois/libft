@@ -6,11 +6,11 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 11:25:19 by sflinois          #+#    #+#             */
-/*   Updated: 2016/12/21 11:36:23 by sflinois         ###   ########.fr       */
+/*   Updated: 2017/01/10 14:41:09 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../includes/libft.h"
 
 int		ft_atoi(const char *str)
 {

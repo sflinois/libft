@@ -6,11 +6,11 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 17:05:44 by sflinois          #+#    #+#             */
-/*   Updated: 2017/01/09 17:06:19 by sflinois         ###   ########.fr       */
+/*   Updated: 2017/01/10 14:58:30 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../includes/libft.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -35,7 +35,7 @@ char	*ft_itoa_base(int n, unsigned int base)
 		str[0] = '-';
 	while (nui > (base - 1))
 	{
-		str[i--] = nui % base + '0';
+		str[i--] = ft_digit_to_char(nui % base, base, 1);
 		nui /= base;
 	}
 	str[i] = nui + '0';

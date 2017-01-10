@@ -6,13 +6,13 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 10:44:36 by sflinois          #+#    #+#             */
-/*   Updated: 2016/12/21 11:46:37 by sflinois         ###   ########.fr       */
+/*   Updated: 2017/01/10 13:30:52 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include "../../includes/libft.h"
+#include "../includes/libft.h"
 
 char	*ft_strndup(const char *s1, size_t n)
 {

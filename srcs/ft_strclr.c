@@ -6,11 +6,11 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 11:42:39 by sflinois          #+#    #+#             */
-/*   Updated: 2016/12/21 11:42:43 by sflinois         ###   ########.fr       */
+/*   Updated: 2017/01/10 13:30:52 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../includes/libft.h"
 
 void	ft_strclr(char *s)
 {
