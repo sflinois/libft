@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit_first.c                                :+:      :+:    :+:   */
+/*   ft_imttoa_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/20 11:52:55 by sflinois          #+#    #+#             */
-/*   Updated: 2017/02/23 17:44:58 by sflinois         ###   ########.fr       */
+/*   Created: 2017/01/24 15:07:36 by sflinois          #+#    #+#             */
+/*   Updated: 2017/02/23 17:43:14 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include <stdlib.h>
+#include <string.h>
+#include <inttypes.h>
 
-char	*ft_strsplit_first(char **str, char c)
+char	*ft_imttoa_base(uintmax_t n, unsigned int base, int maj)
 {
-	int		i;
-	char	*ret;
-	char	*tmp;
+	uintmax_t		nui;
+	unsigned int	i;
+	char			*str;
 
-	i = 0;
-	if (!str || !(*str))
-		return (NULL);
-	while ((*str)[i] && (*str)[i] != c)
-		i++;
-	if ((*str)[i])
+	i = 1;
+	nui = n;
+	while (nui > (base - 1))
 	{
-		if (!(ret = strndup(*str, i)))
-			return (NULL);
-		if ((tmp = ft_strdup(*str + i + 1)))
-		{
-			free(*str);
-			*str = ft_strdup(tmp);
-			free(tmp);
-		}
-		return (ret);
+		nui /= base;
+		i++;
 	}
-	return (NULL);
+	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	str[i--] = '\0';
+	nui = n;
+	while (nui > (base - 1))
+	{
+		str[i--] = ft_digit_to_char(nui % base, base, maj);
+		nui /= base;
+	}
+	str[i] = ft_digit_to_char(nui, base, maj);
+	return (str);
 }

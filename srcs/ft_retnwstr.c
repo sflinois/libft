@@ -1,40 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit_first.c                                :+:      :+:    :+:   */
+/*   ft_retnwstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/20 11:52:55 by sflinois          #+#    #+#             */
-/*   Updated: 2017/02/23 17:44:58 by sflinois         ###   ########.fr       */
+/*   Created: 2017/03/18 15:11:41 by sflinois          #+#    #+#             */
+/*   Updated: 2017/04/19 11:39:36 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
 #include <stdlib.h>
+#include <locale.h>
+#include <wchar.h>
+#include "../includes/libft.h"
 
-char	*ft_strsplit_first(char **str, char c)
+char	*ft_retnwstr(wchar_t *wstr, size_t size)
 {
-	int		i;
 	char	*ret;
 	char	*tmp;
+	char	*tmp2;
 
-	i = 0;
-	if (!str || !(*str))
+	if (!wstr)
 		return (NULL);
-	while ((*str)[i] && (*str)[i] != c)
-		i++;
-	if ((*str)[i])
+	ret = ft_strdup("");
+	while (*wstr)
 	{
-		if (!(ret = strndup(*str, i)))
-			return (NULL);
-		if ((tmp = ft_strdup(*str + i + 1)))
+		tmp = ret;
+		if (!(tmp2 = ft_retwchar(*wstr)))
 		{
-			free(*str);
-			*str = ft_strdup(tmp);
 			free(tmp);
+			return (NULL);
 		}
-		return (ret);
+		if (ft_strlen(tmp) + ft_strlen(tmp2) > size)
+		{
+			free(tmp2);
+			return (tmp);
+		}
+		ret = ft_strjoin_free(tmp, tmp2);
+		wstr++;
 	}
-	return (NULL);
+	return (ret);
+}
+
+size_t	ft_wstrlen(wchar_t *wstr)
+{
+	size_t	len;
+
+	len = 0;
+	while (wstr[len])
+		len++;
+	return (len);
 }

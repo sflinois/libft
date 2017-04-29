@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_litoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 13:43:21 by sflinois          #+#    #+#             */
-/*   Updated: 2017/01/24 16:39:16 by sflinois         ###   ########.fr       */
+/*   Created: 2017/01/11 10:23:17 by sflinois          #+#    #+#             */
+/*   Updated: 2017/02/23 17:44:17 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include <stdlib.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_sitoa(short int n)
 {
-	int		i;
+	unsigned short int	nui;
+	unsigned int		i;
+	char				*str;
 
-	i = 0;
-	while (s[i++])
-		if (s[i - 1] == (char)c)
-			return ((char *)(s + i - 1));
-	if (s[i - 1] == (char)c)
-		return ((char *)(s + i - 1));
-	return (NULL);
+	i = (n < 0) ? 2 : 1;
+	nui = (n < 0) ? -n : n;
+	while (nui > 9)
+	{
+		nui /= 10;
+		i++;
+	}
+	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	str[i--] = '\0';
+	nui = (n < 0) ? -n : n;
+	if (n < 0)
+		str[0] = '-';
+	while (nui > 9)
+	{
+		str[i--] = nui % 10 + '0';
+		nui /= 10;
+	}
+	str[i] = nui + '0';
+	return (str);
 }

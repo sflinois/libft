@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   fct_expr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/21 11:32:22 by sflinois          #+#    #+#             */
-/*   Updated: 2017/02/03 16:21:33 by sflinois         ###   ########.fr       */
+/*   Created: 2017/02/23 17:45:51 by sflinois          #+#    #+#             */
+/*   Updated: 2017/03/18 12:03:07 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include <stdio.h>
+#include "../../includes/ft_printf.h"
 
-int		ft_isdigit(int c)
+void		new_expr(t_expr *expr)
 {
-	return (c >= '0' && c <= '9');
+	expr->flags = 0;
+	expr->min_width = 0;
+	expr->precision = -1;
+	expr->length = 0;
+	expr->type = 0;
 }

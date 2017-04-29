@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit_first.c                                :+:      :+:    :+:   */
+/*   fct_printf_min_width.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/20 11:52:55 by sflinois          #+#    #+#             */
-/*   Updated: 2017/02/23 17:44:58 by sflinois         ###   ########.fr       */
+/*   Created: 2017/01/27 15:05:27 by sflinois          #+#    #+#             */
+/*   Updated: 2017/03/19 12:46:05 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
 #include <stdlib.h>
+#include "../../includes/libft.h"
+#include "../../includes/ft_printf.h"
 
-char	*ft_strsplit_first(char **str, char c)
+char	*apply_min_width(char *str, t_expr expr)
 {
-	int		i;
+	int		n;
 	char	*ret;
-	char	*tmp;
 
-	i = 0;
-	if (!str || !(*str))
+	if (!str)
 		return (NULL);
-	while ((*str)[i] && (*str)[i] != c)
-		i++;
-	if ((*str)[i])
+	n = expr.min_width - ft_strlen(str);
+	if (n <= 0 || (*str != 0 && expr.min_width == 1))
+		return (str);
+	else
 	{
-		if (!(ret = strndup(*str, i)))
+		if (!(ret = ft_strnew(sizeof(char) * expr.min_width)))
 			return (NULL);
-		if ((tmp = ft_strdup(*str + i + 1)))
+		while (n > 0)
 		{
-			free(*str);
-			*str = ft_strdup(tmp);
-			free(tmp);
+			n--;
+			ret[n] = ' ';
 		}
-		return (ret);
+		ret = ft_strcat(ret, str);
+		free(str);
 	}
-	return (NULL);
+	return (ret);
 }
