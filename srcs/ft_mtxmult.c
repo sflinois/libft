@@ -6,7 +6,7 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/29 14:34:11 by sflinois          #+#    #+#             */
-/*   Updated: 2017/04/29 17:11:42 by sflinois         ###   ########.fr       */
+/*   Updated: 2017/04/29 17:32:37 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			calc_mtx(t_matrix *a, t_matrix *b, int x, int y)
 	return (ret);
 }
 
-int			calc_mtx4(int [4][4]a, int [4][4]b, int x, int y)
+int			calc_mtx4(int a[4][4], int b[4][4], int x, int y)
 {
 	int		i;
 	int		ret;
@@ -76,7 +76,7 @@ t_matrix	*ft_mtxmult(t_matrix *a, t_matrix *b)
 	return (NULL);
 }
 
-int		[4][4]ft_mtx4mult(int [4][4]a, int [4][4]b)
+int				**ft_mtx4mult(int a[4][4], int b[4][4])
 {
 	int			mtx[4][4];
 	int			x;
@@ -127,7 +127,7 @@ t_matrix	*ft_mtxmultint(int a, t_matrix *b)
 	return (NULL);
 }
 
-int			[4][4]ft_mtx4multint(int a,int [4][4]b)
+int				ft_mtx4multint(int a,int b[4][4])
 {
 	int			mtx[4][4];
 	int			x;
