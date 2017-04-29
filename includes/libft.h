@@ -6,13 +6,15 @@
 /*   By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 11:22:10 by sflinois          #+#    #+#             */
-/*   Updated: 2017/04/29 14:39:06 by sflinois         ###   ########.fr       */
+/*   Updated: 2017/04/29 16:04:20 by sflinois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 
 # define LIBFT_H
+# define BUFF_SIZE 32
+
 # include <string.h>
 # include <inttypes.h>
 # include <wchar.h>
@@ -125,6 +127,7 @@ void				ft_strrev(char *str);
 char				*ft_retwchar(wchar_t wc);
 char				*ft_retwstr(wchar_t *wstr);
 char				*ft_retnwstr(wchar_t *wstr, size_t size);
+int					get_next_line(const int fd, char **line);
 int					ft_printf(const char *format, ...);
 t_matrix			*ft_mtxnew(int nb_rows, int nb_cols, int **tab);
 
