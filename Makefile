@@ -6,7 +6,7 @@
 #    By: sflinois <sflinois@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/10 11:48:48 by sflinois          #+#    #+#              #
-#    Updated: 2017/04/30 16:38:44 by sflinois         ###   ########.fr        #
+#    Updated: 2017/04/30 18:26:23 by sflinois         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 $(OBJ_PATH)/%.o : $(S_PRINTF_PATH)/%.c
-	@mkdir $(O_BJ_PATH) 2> /dev/null || true
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 clean:
